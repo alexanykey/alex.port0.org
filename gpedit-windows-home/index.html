@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>САЙТ С СТАТЬЯМИ И ПРОГРАММАМИ ДЛЯ КОМПЬЮТЕРОВ</TITLE>
+    <LINK href="/@design/page.css" rel="stylesheet" type="text/css">
+    <BASE href="">
+    <!-- {{HEAD}} -->
+</HEAD>
+
+<BODY bgcolor="#881316" background="../@design/square.gif" text="#F5FFBE" link="#00FF00" alink="#00FF00" vlink="#00FF00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <!-- {HEADER} -->
+    <iframe src="/header.htm" frameborder="0" class="headerFrame" onload="resizeIframe(this)"></iframe>
+    <CONTENT>
+        <h1>Не найден gpedit.msc Windows 10 Домашняя. Как исправить?</h1><span class="date">2018-11-07 21-02</span>
+        <span class="cats">категории: </span>
+        <span class="tags">теги: </span>
+
+
+
+        <p>В профессиональных версиях Windows 10 есть очень полезный инструмент – Group Policy Editor / Редактор групповой политики. Он позволяет тонко настраивать систему без использования сторонних программ, достаточно набрать в командной строке или окне выполнить команду <strong>gpedit.msc</strong> и он запустится. Но пользователям домашних версий Windows не повезло, у них такого нет. Но если очень хочется, то редактор получить таки можно.
+            <!--more-->
+        </p>
+        <p>Итак, допустим у нас Windows 10 домашняя. Win+R -&gt; gpedit.msc не работает. Что делать? Как установить gpedit.msc на Windows 10 Home?</p>
+        <p>На самом деле всё достаточно просто. Нужно лишь включить данный редактор в системе, для этого достаточно выполнить несколько команд. Я уже загрузил их в bat файл и залил на сайт.</p>
+
+        <ol>
+            <li data-select-like-a-boss="1">Качаем <a href="gpedit-enabler.bat">этот bat-файл</a></li>
+            <li>Нажимаем правой кнопкой, запуск от имени администратора</li>
+            <li>Если вылезет окно UAC — подтверждаем.</li>
+            <li>Можно писать в командной строке <strong>gpedit.msc</strong> и всё будет работать.</li>
+        </ol>
+        
+	Если фаел не качается, то выделяем код, сохраняем в блокноте с разширением .bat или .cmd
+    и далее с пункта 2.
+	<pre class="EnlighterJSRAW" data-enlighter-language="js">
+    @echo off 
+    pushd "%~dp0" 
+    
+    dir /b %SystemRoot%\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum >List.txt 
+    dir /b %SystemRoot%\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum >>List.txt 
+    
+    for /f %%i in ('findstr /i . List.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i" 
+    pause
+    </pre>
+
+        <!-- {BODY} -->
+    </CONTENT>
+    <!-- {FOOTER} -->
+<script src="/@design/j.js"></script>
+</BODY>
+
+</HTML>

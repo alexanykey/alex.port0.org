@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let $0ng = 0, $0ngZ = [
+            // '/@music/open1.mod',
+            // '/@music/open2.mod',
+            // '/@music/open3.mod',
+            '/@music/ENDLESS PiRACY - Killer 3D Pool +2 trn.mod',
+            '/@music/DREAM TEAM - GODS intro.mod'
+        ];
+
+        const libopenmpt = {};
+        libopenmpt.onRuntimeInitialized = () => {
+            let player = new ChiptuneJsPlayer(new ChiptuneJsConfig(0));
+            playpause.onclick = () => player.togglePause();
+            runm.onclick = () => playme($0ngZ[0]);
+
+            player.onEnded(() => {
+                $0ng = ($0ng >= $0ngZ.length - 1) ? 0 : $0ng + 1
+                playme($0ngZ[$0ng])
+            });
+
+            const playme = path => player.load(path, buffer => player.play(buffer));
+            playme($0ngZ[0]);
+        }
+
+    </script>
+    <script src="libopenmpt.js"></script>
+    <script src="chiptune2.js"></script>
+
+</head>
+
+<body>
+<input type="button" value=PLAY/PAUSE id="playpause">
+<input type="button" value=RUN id="runm">
+
+
+</body>
+
+</html>

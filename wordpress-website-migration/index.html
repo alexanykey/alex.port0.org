@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>САЙТ С СТАТЬЯМИ И ПРОГРАММАМИ ДЛЯ КОМПЬЮТЕРОВ</TITLE>
+    <LINK href="/@design/page.css" rel="stylesheet" type="text/css">
+    <BASE href="">
+    <!-- {{HEAD}} -->
+</HEAD>
+
+<BODY bgcolor="#881316" background="../@design/square.gif" text="#F5FFBE" link="#00FF00" alink="#00FF00" vlink="#00FF00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <!-- {HEADER} -->
+    <iframe src="/header.htm" frameborder="0" class="headerFrame" onload="resizeIframe(this)"></iframe>
+<CONTENT>
+<h1>WORDPRESS: перенос сайта на другой хостинг/домен.</h1><span class="date">2017-06-26 22-47</span>
+<span class="cats">категории: CMS, Wordpress, Создание сайтов</span>
+<span class="tags">теги: CMS, Wordpress, Плагин, хостинг</span>
+
+    <!-- {BODY} -->
+<p>Процесс переноса сайта на другой хостинг или домен как правило не сложен. Всё что нужно - это скопировать файлы сайта и базу данных на новый хостинг. В случае с Wordpress это не совсем так. В отличие других CMS, WordPress хранит в базе абсолютные ссылки на домен, на который был установлен, поэтому простой экспорт/импорт базы возможен только в том случае, если домен остаётся прежним. <!--more--><br />
+ Если же использовать поиск с заменой по SQL файлу, то будет нарушена целостность сериализованных данных и собьются настройки темы и некоторых плагинов.</p>
+<p>Если нужно перенести сайт на WordPress с локального сервера на хостинг или на другой домен лучше всего это делать через специальный плагин Duplicator</p>
+<p><a href="https://www.youtube.com/watch?v=5Oz_RYt7olE">Смотреть на</a> <a href="https://www.youtube.com/watch?v=5Oz_RYt7olE"><img src="/wordpress-website-migration/youtube-icon.png" alt="" width="89" height="36"></a> <a href="https://www.youtube.com/watch?v=5Oz_RYt7olE"></a></p>
+<p>Идём в установщик плагинов и ищем Duplicator. <img src="/wordpress-website-migration/2-wordpress-duplicator-search.png" alt="" width="1280" height="720"></p>
+<p>Он будет выглядеть так: <img src="/wordpress-website-migration/1-wordpress-duplicator.png" alt="" width="1280" height="720"></p>
+<p>Нажимаем создать новый, далее и, не обращая внимание на предупреждения, ставим галочку и продолжаем процесс. <img src="/wordpress-website-migration/3-wordpress-duplicator.png" alt="" width="1280" height="720"><img src="/wordpress-website-migration/4-wordpress-duplicator-warning.png" alt="" width="1280" height="720"></p>
+<p>Далее нужно создать базу данных на хостинге и закачать скаченный архив. <img src="/wordpress-website-migration/5-db-creation.png" alt="" width="1280" height="720"></p>
+<p>Теперь переходим по ссылке ВАШ_САЙТ.COM/installer.php, вводим параметры БД и восстанавливаем сайт. <img src="/wordpress-website-migration/6-wordpress-duplicator-db-enter.png" alt="" width="1280" height="720"><img src="/wordpress-website-migration/7-wordpress-duplicator-accept.png" alt="" width="1280" height="720"></p>
+<p>На последнем этапе желательно очистить кэш установки, дабы уберечь незащищённые файлы от взлома <img src="/wordpress-website-migration/8-wordpress-duplicator-final.png" alt="" width="1280" height="720"></p>
+<p><a href="https://www.youtube.com/watch?v=5Oz_RYt7olE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5Oz_RYt7olE/maxresdefault.jpg" width="100%" class="yt-thumb alignnone" alt="" /></a></p>
+
+</CONTENT>
+        <!-- {FOOTER} -->
+    <script src="/@design/j.js"></script>
+</BODY>
+</HTML>
+
+

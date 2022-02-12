@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>САЙТ С СТАТЬЯМИ И ПРОГРАММАМИ ДЛЯ КОМПЬЮТЕРОВ</TITLE>
+    <LINK href="/@design/c.css" rel="stylesheet" type="text/css">
+    <base target="_top">
+</HEAD>
+
+<BODY text="#F5FFBE" link="#00FF00" alink="#00FF00" vlink="#00FF00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <div class="menu">
+        <a href="/home.htm"><img id=iii src="/@design/home-animated-blue-1.gif" width="34" valign=middle></a>
+        <img src="/@design/playpause.png" width="34" align="texttop" id="playpause">
+        <img src="/@design/animated-bullet-26.gif" class="blinkingBullet">
+        <a href="/news">НОВОСТИ</a>
+        <img src="/@design/animated-bullet-26.gif" class="blinkingBullet">
+        <a href="/links/index.html">ССЫЛКИ</a>
+        <img src="/@design/animated-bullet-26.gif" class="blinkingBullet">
+        <a href="/download">СКАЧАТЬ</a>
+        <img src="/@design/animated-bullet-26.gif" class="blinkingBullet">
+        <a href="/articles">ПОЧИТАТЬ</a>
+        <img src="/@design/animated-bullet-26.gif" class="blinkingBullet">
+        <a onmouseup="top.location='/'" href="/" target="_top">ВЫХОД</a>
+    </div>
+    <SCRIPT LANGUAGE="JavaScript">
+        if (self.parent.frames.length == 0) { self.parent.location = "/home.htm" };
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript">
+        let l0ad3d = 0; $0ng = 0, $0ngZ = [
+            '/@music/CHiCNCREAM - WinRARDosRAR3.50rucrk.it',
+            '/@music/Cafe - 010 Editor 2.0kg.xm',
+            '/@music/CHiCNCREAM - WinRAR and DosRAR 3.5b6.xm',
+            '/@music/FRiCTiON - Carver 2.1kg.xm',
+            '/@music/HERETiC - SchemaToDoc With Table Annotator 2.5 crk.xm',
+            '/@music/Lobstrokk - IncrediM P†skchip(easter egg).xm',
+            '/@music/aryx.s3m',
+            '/@music/D34THC0R3 - Hamsterball 3.25 crk.mod',
+            '/@music/demonblue-soundfxs.mod',
+            '/@music/DREAM TEAM - GODS intro.mod',
+            '/@music/ENDLESS PiRACY - Killer 3D Pool +2 trn.mod'
+        ];
+        $0ngZ = $0ngZ.sort((a, b) => .5 - Math.random());
+        const libopenmpt = {};
+        libopenmpt.onRuntimeInitialized = () => {
+            let player = new ChiptuneJsPlayer(new ChiptuneJsConfig(0));
+            playpause.onclick = () => {
+                setCookie('playing', 'no' == getCookie('playing') ? 'on' : 'no');
+                l0ad3d ? player.togglePause() : playme($0ngZ[0]);
+            }
+            player.onEnded(() => {
+                $0ng = ($0ng >= $0ngZ.length - 1) ? 0 : $0ng + 1
+                playme($0ngZ[$0ng])
+            });
+            const playme = path => { player.load(path, buffer => player.play(buffer)); l0ad3d = 1; };
+            'no' == getCookie('playing') ? 0 : playme($0ngZ[0]);
+        }
+
+    </SCRIPT>
+    <SCRIPT LANGUAGE="javascript" src="/@design/cockie.js"></SCRIPT>
+    <SCRIPT LANGUAGE="javascript" src="/@design/mod-play/libopenmpt.js"></SCRIPT>
+    <SCRIPT LANGUAGE="javascript" src="/@design/mod-play/chiptune2.js"></SCRIPT>
+
+
+
+
+
+    <SCRIPT src="/@design/j.js"></SCRIPT>
+</BODY>
+<style>html, body {height: 1px;}</style>
+</HTML>

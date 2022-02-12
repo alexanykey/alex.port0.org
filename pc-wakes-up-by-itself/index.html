@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>САЙТ С СТАТЬЯМИ И ПРОГРАММАМИ ДЛЯ КОМПЬЮТЕРОВ</TITLE>
+    <LINK href="/@design/page.css" rel="stylesheet" type="text/css">
+    <BASE href="">
+    <!-- {{HEAD}} -->
+</HEAD>
+
+<BODY bgcolor="#881316" background="../@design/square.gif" text="#F5FFBE" link="#00FF00" alink="#00FF00" vlink="#00FF00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <!-- {HEADER} -->
+    <iframe src="/header.htm" frameborder="0" class="headerFrame" onload="resizeIframe(this)"></iframe>
+<CONTENT>
+<h1>Почему компьютер с Windows сам включается из ждущего режима?</h1><span class="date">2017-06-12 22-17</span>
+<span class="cats">категории: Windows, Сисадминство, Устранение неполадок</span>
+<span class="tags">теги: windows, Командная строка</span>
+
+<p>Windows давно умеет пробуждать компьютер из ждущего режима, но лишь в десятке это стало активно по умолчанию. Лично меня такая самодеятельность бесит, поэтому предлагаю своё решение данной проблемы:</p>
+<p>Первым долгом определяем от чего компьютер проснулся. Для этого заходим в командную строку с правами админа:<br />
+ <img class="wp-image-757 size-full aligncenter" src="/pc-wakes-up-by-itself/command-prompt.png" alt="" width="312" height="625" /></p>
+<p>В консоли нужно написать <span style="font-family: 'courier new', courier, monospace;"><strong>powercfg -LASTWAKE</strong></span><img src="/pc-wakes-up-by-itself/last-wake.png" alt="" width="485" height="215" /></p>
+<p>Это покажет какое именно устройство вызвало пробуждение в последний раз.</p>
+<p>затем пишем <span style="font-family: 'courier new', courier, monospace;"><strong>POWERCFG -DEVICEQUERY wake_armed</strong></span></p>
+<p>Эта команда покажет все устройства, которые могут пробуждать компьютер. Обычно это мыши, клавиатуры и сетевые карты.</p>
+<p>Запретить устройству пробуждать компьютер можно командой:<br />
+ <strong style="font-family: 'courier new', courier, monospace;">POWERCFG -DEVICEDISABLEWAKE "<em>DEVICE-NAME</em>"<br />
+ </strong>в моём случае <strong><em>DEVICE-NAME - это Broadcom NetXtreme Gigabit Ethernet</em></strong><strong style="font-family: 'courier new', courier, monospace;"><br />
+ </strong></p>
+<p>Если уже известно, какое устройство выводит компьютер из спячки, то можно просто зайти в диспетчер устройств и отключить ему эту возможность:<a href="device-manager.png"><img class="alignnone wp-image-786 size-full" src="/pc-wakes-up-by-itself/device-manager.png" alt="" width="779" height="571" /></a></p>
+<p>Вот небольшой ролик о том как это сделать:</p>
+<p><a href="https://www.youtube.com/watch?v=7momgTmJ2OM" target="_blank" rel="noopener"><img class="yt-thumb alignnone" src="https://i.ytimg.com/vi/7momgTmJ2OM/maxresdefault.jpg" alt="" width="100%"></a></p>
+После выхода предыдущего ролика на тему самопробуждения компа было обновление винды и потребовалось сделать ещё один ролик, дополняющий предыдущий. Вот он:
+<p><a href="https://www.youtube.com/watch?v=YbE90sE_SGQ" target="_blank" rel="noopener"><img class="yt-thumb alignnone" src="https://i.ytimg.com/vi/YbE90sE_SGQ/maxresdefault.jpg" alt="" width="100%"></a></p>
+
+
+<p>&nbsp;</p>
+<div>Также не забывайте подписываться на мой канал  <script src="https://apis.google.com/js/platform.js"></script>
+<div class="g-ytsubscribe" data-channelid="UCX9a9Y9OjG92q_Da0Yl45Cg" data-layout="default" data-count="default"> </div>
+</div>
+    <!-- {BODY} -->
+</CONTENT>
+        <!-- {FOOTER} -->
+<script src="/@design/j.js"></script>
+</BODY>
+</HTML>

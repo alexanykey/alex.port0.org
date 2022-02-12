@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+
+<HEAD>
+    <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>САЙТ С СТАТЬЯМИ И ПРОГРАММАМИ ДЛЯ КОМПЬЮТЕРОВ</TITLE>
+    <LINK href="/@design/page.css" rel="stylesheet" type="text/css">
+    <BASE href="/show-passwords/">
+    <!-- {{HEAD}} -->
+</HEAD>
+
+<BODY bgcolor="#881316" background="../@design/square.gif" text="#F5FFBE" link="#00FF00" alink="#00FF00" vlink="#00FF00" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <!-- {HEADER} -->
+    <iframe src="/header.htm" frameborder="0" class="headerFrame" onload="resizeIframe(this)"></iframe>
+    <CONTENT>
+        <!-- {BODY} -->
+        <h1>Показать пароли на странице</h1><span class="date">2013-06-28 18-12</span>
+        <span class="cats">категории: Интернет</span>
+        <span class="tags">теги: Интернет, Снипет, Советы</span>
+
+        <p>В полях для ввода пароля на сайтах вводимые символы заменяются звёздочками (или точками). Это может защитить от подглядываний, но делает не удобным сам ввод пароля. На некоторых сайтах предусмотрены кнопки показа пароля, но это есть не везде.
+          <!--more-->
+        </p>
+        <!--break-->
+        <p>На помощь придёт мой букмарклет для показа вводимого пароля.</p>
+        <p>Букмарклет – это небольшой скрипт, который можно поместить в избранное браузера и запускать оттуда, выполняя нужные действия со страницею..</p>
+        <p>Перетащите следующую ссылку <a href="javascript:(()=>{for(let p of document.querySelectorAll('input[type$=password]'))p.type='text'==p.type?'password':'waspassword'})()" onClick="for(let p of document.querySelectorAll('input[type$=password]'))p.type='text'==p.type?'password':'waspassword';return false">Показать пароли</a> на панель избранного своего браузера. При её нажатии пароли откроются, а при повторном нажатии вновь спрячутся </p>
+
+        <p><input name="" readonly="readonly" size="20" style="border:1px solid #000" type="password" value="SuperPassword123456" /></p>
+
+
+
+
+
+        </p>
+        Далее привожу скрипт в удобном виде
+        <pre class="EnlighterJSRAW" data-enlighter-language="js">
+            (()=>{
+                for(let p of document.querySelectorAll('input[type$=password]'))
+                    p.type = 'text' == p.type ? 'password' : 'waspassword'
+            })()
+</pre>
+        <p>Сей скрипт работает во всех современных браузерах.</p>
+</CONTENT>
+    <!-- {FOOTER} -->
+<script src="/@design/j.js"></script>
+</BODY>
+
+</HTML>
